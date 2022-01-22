@@ -61,17 +61,22 @@ function App() {
       <Navbar title="Navbar" mode={mode} toggelMode={toggelMode}/>
       {/* <Navbar/> */}
       <Alert alert={alert}/>
+
       <div className="container mb-3">
-     
-      <Routes>
+
+      {/* <TextForm Heading = "Enter The text to analyse Below"  mode={mode} showAlert={showAlert}/> */}
+      {/* <About/> */}
+
+
+       <Routes>
         <Route exact path="/" element={<TextForm Heading = "Enter The text to analyse Below"  mode={mode} showAlert={showAlert}/>} />
-        <Route exact path="about/*" element={<About />} />
+        <Route exact path="about/*" element={<About mode={mode}/>} />
       </Routes>
-  
+   
       </div>
 
-      </BrowserRouter>
-            
+     </BrowserRouter>
+           
         
            
          

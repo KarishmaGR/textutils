@@ -52,14 +52,14 @@ export default function TextForm(props) {
 
                 <textarea className="form-control" value={Text} onChange={handleOnChange} id="myBox" rows="20"  style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}}></textarea>
             </div>
-            <button className='btn btn-primary' onClick={handleUpClick} onDoubleClick={handleUpdbClick}>Convert to Uppercase</button>
-            <button className='btn btn-primary mx-4' onClick={handlecopyClick}>Copy the above text</button>
-            <button className='btn btn-primary mx-4' onClick={handleclearClick}>Clear Text</button>
+            <button className='btn btn-primary mx-4 my-1' onClick={handleUpClick} onDoubleClick={handleUpdbClick}>Convert to Uppercase</button>
+            <button className='btn btn-primary mx-4 my-1' onClick={handlecopyClick}>Copy the above text</button>
+            <button className='btn btn-primary mx-4 my-1' onClick={handleclearClick}>Clear Text</button>
         </div>
 
         <div className= "container my-4" style={{color: props.mode==='dark'?'white':'#042743'}}>
             <h1>Your Text summary</h1>
-            <p>{Text.split(" ").length} words,{Text.length} characters</p>
+            <p>{Text.split(" ").filter((element)=>{return element.length!==0}).length} words,{Text.length} characters</p>
             <p>{0.008 *  Text.split(" ").length} Minutes read</p>
             <h2>Preview</h2>
             <p>{Text.length>0?Text:"Enter something in the textbox above to preview it here"}</p>
